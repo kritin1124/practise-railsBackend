@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_21_104646) do
-  create_table "products", force: :cascade do |t|
+ActiveRecord::Schema[7.1].define(version: 2025_02_22_085624) do
+  create_table "books", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.integer "price"
-    t.string "description"
   end
 
+  create_table "products", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price"
+    t.string "description"
+    t.integer "book_id"
+    t.index ["book_id"], name: "index_products_on_book_id"
+  end
+
+  add_foreign_key "products", "books"
 end

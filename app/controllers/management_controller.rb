@@ -2,7 +2,6 @@ class ManagementController < ApplicationController
   skip_before_action :verify_authenticity_token, only:[:create]
   def index
     @products = Product.all
-    #render json: @products  # ใช้ render json: เพื่อส่งข้อมูลในรูปแบบ JSON
     respond_to do |format|
       format.html
       format.json {render json:@products}
