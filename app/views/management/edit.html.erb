@@ -1,0 +1,14 @@
+<%=form_with(model: @products , url: update_path, method: :patch, local: false ) do |form|%>
+
+    <div class="form">
+    
+        <%=form.label :name, "Product Name:"%>
+        <%=form.text_field :name%>
+        <%=form.label :price, "Price: "%>
+        <%=form.text_field :price%>
+        <%=form.label :description, "Description: "%>
+        <%=form.text_field :description%>
+        <%= form.submit%>
+
+    </div>
+<%end%>

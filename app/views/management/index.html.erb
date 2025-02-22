@@ -1,0 +1,8 @@
+<div>
+    <% @products.each do |product| %>
+      <%=product.name%>
+      <%=product.price%>
+      <%= button_to 'Edit', edit_path(product.id),method: :get%>
+      <%= button_to "Delete", destroy_path(product.id),method: :delete%>
+    <% end %>
+</div>
